@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eco-Alerta Playas Chiapas</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+</head> 
+
+<body>
+
+<!-- TARJETAS SUPERIORES -->
+<div class="top-cards">
+    <div class="card">🌊 <span id="porcentaje">--%</span></div>
+    <div class="card">🌿 <span id="seguridad">--</span></div>
+    <div class="card">⚠️ <span id="alerta">--</span></div>
+    <div class="card">🏖️ <span id="nombrePlaya">--</span></div>
+</div>
+
+<div class="contenedor">
+
+    <!-- IZQUIERDA -->
+    <div class="izquierda">
+        <h1>Eco-Alerta</h1>
+        <p>Monitoreo de contaminación en playas turísticas del soconusco.</p>
+
+        <div class="info">
+            <p>
+            Mantener limpias las playas del Soconusco es importante por el turismo,
+            la salud y el medio ambiente.
+            </p>
+        </div>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="derecha">
+
+        <div id="map"></div>
+
+        <h2 onclick="toggleReportes()" style="cursor:pointer;">
+            Reportes de usuarios
+        </h2>
+
+        <div id="reportes"></div>
+
+        <div id="formulario" style="display:none;">
+            <textarea id="comentario" placeholder="Describe la situación..."></textarea>
+            <br><br>
+            <button onclick="guardarReporte()">Enviar</button>
+        </div>
+
+        <!-- MENU INFERIOR -->
+        <div class="menu-inferior">
+            <button onclick="toggleReportes()">💬<br>Comentarios</button>
+            <button onclick="alert('Alertas activas')">⚠️<br>Alertas</button>
+            <button onclick="abrirFormulario()">📸<br>Reportar</button>
+            <button onclick="alert('Historial próximamente')">🕒<br>Historial</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 🔥 LIBRERÍAS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+<!-- 🔥 FIREBASE (VERSIÓN COMPAT) -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<!-- TU SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
